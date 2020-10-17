@@ -1,0 +1,7 @@
+{
+    "host" : "localhost",
+    "password" : "123",
+    "port" : "32769",
+    "user" : "application",
+    "database" : "tcc_danilo"
+}
