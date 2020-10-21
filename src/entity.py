@@ -15,7 +15,6 @@ class Entity:
         cursor = connection.cursor()
         cursor.execute(sql)
         result = cursor.fetchone()[0]
-        print(result)
         self.connector.close(connection)
         return result
 
@@ -27,4 +26,17 @@ class Entity:
         cursor = connection.cursor()
         cursor.execute(sql,values)
         connection.commit()
+        self.connector.close(connection)
+
+    def find(self, id=0):
+        sql = 'SELECT * FROM history where id = ' + str(id)
+        connection = self.connector.open()
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        result = cursor.fetchone()
+        if(result != None):
+            self.id = result[0]
+            self.createdAt = result[1]
+            self.ph = result[2]
+            self.status = result[3]
         self.connector.close(connection)

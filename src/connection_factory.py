@@ -17,7 +17,7 @@ class MyConnector:
         connection.close()
 
     def importConfig(self):
-        f = open("./config.json","r")
+        f = open("./config/config.json","r")
         f_json = json.loads(f.read())
         f.close()
         return f_json

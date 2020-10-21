@@ -1,8 +1,8 @@
-f = open("../base.csv","w")
+f = open("./assets/base.csv","w")
 f.write("data_amostra;ph;status\n2020-10-15;6.8;BOA\n2020-10-14;2.5;RUIM\n2020-10-13;9;RUIM\n")
 f.close()
 
-f = open("../base.csv", "r")
+f = open("./config/base.csv", "r")
 
 from plotter import Plot
 
